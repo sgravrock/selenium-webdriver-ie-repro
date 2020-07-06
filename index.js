@@ -10,9 +10,7 @@ async function run() {
 
 function startServer() {
     const app = express();
-    app.get('/', (req, res) => {
-        res.send('');
-    });
+    app.use(express.static('public'));
 
     return new Promise(resolve => {
         const server = app.listen(8888, () => {
